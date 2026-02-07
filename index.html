@@ -353,6 +353,42 @@ footer {
 </table>
 
 <p><strong>Dica:</strong> Se não souber, utilize <strong>5%</strong>.</p>
+
+<!-- =============================== -->
+<!--  COMO FAZER A EXPORTAÇÃO E IMPORTAÇÃO DO TEMPLATE - ORIENTAÇÕES -->
+<!-- =============================== -->
+
+<h3>Exportação e Importação de Templates</h3>
+
+<p><strong>Exportar resultado:</strong><br>
+Ao clicar em "Exportar resultado", o sistema salva um arquivo contendo o estado atual da tabela de resultados.
+Esse arquivo armazena a estrutura visual dos cálculos no formato JSON.</p>
+
+<p><strong>O que acontece na exportação:</strong></p>
+<ul>
+    <li>O conteúdo da tabela é convertido em texto.</li>
+    <li>Esse texto é salvo em um arquivo local no seu computador.</li>
+    <li>O arquivo pode ser guardado, compartilhado ou reutilizado.</li>
+</ul>
+
+<p><strong>Importar template:</strong><br>
+Ao selecionar um arquivo exportado anteriormente, o sistema carrega novamente a tabela exatamente como ela estava.</p>
+
+<p><strong>O que acontece na importação:</strong></p>
+<ul>
+    <li>O arquivo JSON é lido pelo navegador.</li>
+    <li>O conteúdo visual é reconstruído na página.</li>
+    <li>Os dados aparecem sem necessidade de recalcular.</li>
+</ul>
+
+<p><strong>Como usar corretamente:</strong></p>
+<ul>
+    <li>Primeiro realize a simulação normalmente.</li>
+    <li>Depois exporte o resultado.</li>
+    <li>Para recuperar, utilize o botão de importação.</li>
+    <li>Use apenas arquivos gerados pelo próprio simulador.</li>
+</ul>
+
 </div>
 
 <!-- =============================== -->
@@ -364,7 +400,11 @@ footer {
 </div>
 
     <footer>
-        Simulação educacional — valores reais descontados pela inflação.
+        Simulação educacional — valores reais descontados pela inflação.<br>
+        	<small>
+	Ferramenta educacional para simulação de investimentos de longo prazo.
+	Resultados baseados em modelos matemáticos simplificados.
+	</small>
     </footer>
 </div>
 
@@ -460,5 +500,4 @@ function importTemplate() {
     <footer>
      ©   LUCK WAY® Informática  - Iraê César Brandão - DEV  
     </footer>
-
 </html>
