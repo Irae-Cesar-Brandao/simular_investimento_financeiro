@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Simulador de Investimento Finaceiro Real</title>
+
+<!-- =============================== -->
+<!-- ESTILIZAÇÃO CSS -->
+<!-- =============================== -->
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -88,7 +92,10 @@ footer {
     color: #94a3b8;
     font-size: 13px;
 }
-/* ESTILIZANDO A IMAGEM 8/
+
+/* =============================== */
+/* ESTILIZANDO A IMAGEM */
+/* =============================== */
 
 .image-slot {
     display: flex;
@@ -104,8 +111,9 @@ footer {
     border: 2px solid #334155;
     box-shadow: 0 0 20px rgba(99,102,241,0.3);
 }
-
+/* =============================== */
 /* ESTILIZANDO A ORIENTAÇÃO */
+/* =============================== */
 .guide {
     background: #020617;
     border: 1px solid #334155;
@@ -138,8 +146,9 @@ footer {
     margin-left: 20px;
 }
 
+/* =============================== */
 /*ESTILIZANDO TABELAS ADICIONAIS DE ORIENTAÇÃO*/
-
+/* =============================== */
 .guide-table {
     width: 100%;
     border-collapse: collapse;
@@ -158,10 +167,42 @@ footer {
     color: #818cf8;
 }
 
+
+/* =============================== */
+/* ESTILO DO MENU DE TEMPLATES     */
+/* =============================== */
+
+.template-menu {
+    background: #020617;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.template-menu select {
+    padding: 10px;
+    font-size: 15px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+.template-menu button {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 6px;
+    background: #22c55e;
+    color: #020617;
+    border: none;
+    cursor: pointer;
+}
+
 </style>
-
-
-
+<!-- =============================== -->
+<!-- FRONT END - CORPO DA PÁGINA HTML -->
+<!-- =============================== -->
 </head>
 <body>
 
@@ -199,6 +240,21 @@ footer {
         </thead>
         <tbody></tbody>
     </table>
+
+<!-- =============================== -->
+<!-- MENU REAL DE EXPORTAÇÃO        -->
+<!-- =============================== -->
+
+<div class="template-menu">
+    <h3>Exportar / Importar Template</h3>
+
+    <button onclick="exportTemplate()">Exportar resultado</button>
+    <input type="file" id="importFile" onchange="importTemplate()">
+</div>
+
+<!-- =============================== -->
+<!-- AQUI TERMINA O BLOCO DE MENU -->
+<!-- =============================== -->
 
 <div class="guide">
     <h2>Como usar este simulador</h2>
@@ -240,8 +296,10 @@ footer {
     <p><strong>Tradução:</strong><br>
     pequenos valores + tempo = grandes diferenças.</p>
 
-
+<!-- =============================== -->
 <!-- ORIENTAÇÕES COMPLEMENTARES SOBRE RENDIMENTO ANUAL -->
+<!-- =============================== -->
+
 <h3>Referências aproximadas de rendimento (Brasil)</h3>
 
 <table class="guide-table">
@@ -269,7 +327,9 @@ footer {
 
 <p><strong>Dica:</strong> Se não sabe qual usar, utilize <strong>8%</strong> como valor conservador.</p>
 
+<!-- =============================== -->
 <!-- ORIENTAÇÕES COMPLEMENTARES SOBRE INFLAÇÃO ANUAL -->
+<!-- =============================== -->
 
 <h3>Referências de inflação anual</h3>
 
@@ -295,17 +355,23 @@ footer {
 <p><strong>Dica:</strong> Se não souber, utilize <strong>5%</strong>.</p>
 </div>
 
+<!-- =============================== -->
 <!-- INSERINDO FORMULA DOS CALCULOS-->
+<!-- =============================== -->
+
 <div class="image-slot">
     <img src="simulador.jpg" alt="Imagem do simulador">
 </div>
+
     <footer>
         Simulação educacional — valores reais descontados pela inflação.
     </footer>
 </div>
 
+<!-- =============================== -->
+<!-- SCRIPT DE CÁLCULOS -->
+<!-- =============================== -->
 
-<!-- SCRIP DE CALCULOS -->
 <script>
 function futureValue(monthly, rate, years) {
     let r = rate / 100 / 12;
@@ -344,9 +410,52 @@ function calculate() {
         tbody.innerHTML += row;
     });
 }
+
+// =====================================
+// EXPORTA O HTML DA TABELA
+// SALVA EM ARQUIVO .JSON
+// =====================================
+
+function exportTemplate() {
+    let tableHTML = document.getElementById("resultTable").outerHTML;
+
+    let data = {
+        template: tableHTML,
+        date: new Date().toISOString()
+    };
+
+    let blob = new Blob([JSON.stringify(data)], { type: "application/json" });
+    let url = URL.createObjectURL(blob);
+
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "template-simulador.json";
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
+// =====================================
+// IMPORTA TEMPLATE DO ARQUIVO
+// =====================================
+
+function importTemplate() {
+    let file = document.getElementById("importFile").files[0];
+    if (!file) return;
+
+    let reader = new FileReader();
+    reader.onload = function(e) {
+        let data = JSON.parse(e.target.result);
+        document.getElementById("resultTable").outerHTML = data.template;
+    };
+    reader.readAsText(file);
+}
 </script>
 
 </body>
+<!-- =============================== -->
+<!-- FIM DO HTML-->
+<!-- =============================== -->
 
     <footer>
      ©   LUCK WAY® Informática  - Iraê César Brandão - DEV  
