@@ -5,7 +5,7 @@ Este projeto consiste em um simulador financeiro simples para análise de invest
 O objetivo principal é oferecer uma ferramenta educacional para compreender a diferença entre crescimento nominal e crescimento real do dinheiro ao longo do tempo.
 
 ---
-
+Link de acesso:  https://irae-cesar-brandao.github.io/simular_investimento_financeiro/ 
 ## Funcionalidades
 
 - Simulação de investimentos mensais.
