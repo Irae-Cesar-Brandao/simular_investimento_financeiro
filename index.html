@@ -1,11 +1,48 @@
 <!DOCTYPE html>
+	<!-- =============================== -->
+    <!-- CLinguagem da Página Português Brasileiro  -->
+	<!-- =============================== -->
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>Simulador de Investimento Finaceiro Real</title>
+	<!-- =============================== -->
+    <!-- Codificação de Caracteres (Essencial) -->
+	<!-- =============================== -->
+    <meta charset="UTF-8">
+	<!-- =============================== -->
+    <!-- Meta Viewport (Responsividade/Mobile-First) -->
+		<!-- =============================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =============================== -->
+	<!-- Meta Charset secundário para compatibilidade -->
+	<!-- =============================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  	<!-- =============================== -->
+	<!-- 4. Título da Página (SEO: Idealmente 50-60 caracteres) -->
+	<!-- =============================== -->
+    <title>Simulador de Investimento Finaceiro Real | Luck Way Informática</title>
+
+    <!-- =============================== -->
+	<!-- 5. Meta Descrição (SEO: Resumo atrativo, 150-160 caracteres) -->
+	<!-- =============================== -->
+    <meta name="description" content="Descrição:  Simulador (Calculadora) que mostra quanto seu dinheiro cresce ao longo do tempo e
+		quanto ele realmente vale depois de perder poder de compra para a inflação.">
+
+	<!-- =============================== -->
+	<!-- 6. Meta Keywords (Ainda usada por alguns buscadores, separada por vírgulas) -->
+	<!-- =============================== -->
+    <meta name="keywords" content="simularodr financeiro, Investimento calculos, Mensuração financeira, Poder de Compra, Luck Way informática">
+
+    <!-- =============================== -->
+	<!-- 7. Autor e Direitos Autorais -->
+	<!-- =============================== -->
+    <meta name="author" content="Iraê César Brandão - Desenvolvedor e Professor">
+    <meta name="copyright" content="© 2026 Luck Way Informática">
+
+
 
 <!-- =============================== -->
-<!-- ESTILIZAÇÃO CSS -->
+<!-- ESTILIZAÇÃO INICIO DO CSS -->
 <!-- =============================== -->
 <style>
 body {
@@ -46,6 +83,9 @@ input {
     border: none;
     font-size: 16px;
 }
+/* =============================== */
+/* ESTILIZANDO DOS BOTÕES*/
+/* =============================== */
 
 button {
     grid-column: span 3;
@@ -68,6 +108,9 @@ table {
     margin-top: 25px;
 }
 
+/* =============================== */
+/* ESTILIZANDO DAS TABELAS
+/* =============================== */
 th, td {
     padding: 12px;
     text-align: center;
@@ -200,18 +243,32 @@ footer {
 }
 
 </style>
+
 <!-- =============================== -->
-<!-- FRONT END - CORPO DA PÁGINA HTML -->
+<!-- FNAL DO CSS - ESTILIZAÇÃO -->
+<!-- =============================== -->
+
+	
+<!-- =============================== -->
+<!-- FRONT END - CORPO DA PÁGINA HTML INICIO DO BODY -->
 <!-- =============================== -->
 </head>
 <body>
 
+
+<!-- =============================== -->
+<!-- TITULO E CABEÇALHO DO COROPO FRONT-END-->
+<!-- =============================== -->
 <div class="container">
     <h1>Simulador de Investimento Finaceiro Real</h1>
 <hr>
    <h3> Autor: Iraê César Brandão </h3>
 	   <h4> Desenvolvedor  <a href="https://luckway.com.br/" target="_blank" rel="noopener noreferrer" style= "color: white;">LUCK WAY® Informática</a></h4>
 <hr>
+
+<!-- =============================== -->
+<!-- CAMOS DE INSERÇÃO DE VALORES E DIGITOS -->
+<!-- =============================== -->
     <div class="inputs">
         <div>
             <label>Investimento mensal (R$)</label>
@@ -225,10 +282,15 @@ footer {
             <label>Inflação anual (%)</label>
             <input id="inflation" type="number" value="5">
         </div>
+<!-- =============================== -->
+<!-- BOTÃO DE CALCULAR  -->
+<!-- =============================== -->
 
         <button onclick="calculate()">Calcular</button>
     </div>
-
+<!-- =============================== -->
+<!-- APRESENTAÇÃO EM TELA DOS RESULTADOS  -->
+<!-- =============================== -->
     <table id="resultTable">
         <thead>
             <tr>
@@ -495,13 +557,24 @@ function importTemplate() {
 
 </body>
 <!-- =============================== -->
-<!-- FIM DO HTML-->
+<!-- FIM DO BODY-->
 <!-- =============================== -->
 
+<!-- =============================== -->
+<!--  INICIO DO RODAPÉ-->
+<!-- =============================== -->
     <footer>
      ©   LUCK WAY® Informática  - Iraê César Brandão - DEV  
     </footer>
+	<!-- =============================== -->
+<!-- FIM DO RODAPÉ-->
+<!-- =============================== -->
 
 </html>
+<!-- =============================== -->
+<!-- FIM DO HTML-->
+<!-- =============================== -->
+
+
 
 
