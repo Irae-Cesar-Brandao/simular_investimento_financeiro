@@ -242,6 +242,22 @@ footer {
     cursor: pointer;
 }
 
+
+/* =============================== */
+/*  IMAGEM DO TOPO DO BROWSER    */
+/* =============================== */
+.container-imagem {
+    width: 300px;  /* Tamanho definido do contêiner */
+    height: 200px;
+    overflow: hidden; /* Esconde partes da imagem que sobrarem */
+}
+
+.container-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* A MÁGICA ACONTECE AQUI: preenche sem distorcer */
+}
+
 </style>
 
 <!-- =============================== -->
@@ -255,13 +271,17 @@ footer {
 </head>
 <body>
 
-<div>
+<!-- =============================== -->
+<!-- IOMAGEM DO TOPO DA PÁGINA-->
+<!-- =============================== -->
+<div class="container-imagem">
     <img src="banner.jpg" alt="Imagem do cabeçalho">
 </div>
 
+
 	
 <!-- =============================== -->
-<!-- TITULO E CABEÇALHO DO COROPO FRONT-END-->
+<!-- TITULO E CABEÇALHO DO CORPO FRONT-END-->
 <!-- =============================== -->
 <div class="container">
     <h1>Simulador de Investimento Finaceiro Real</h1>
@@ -578,6 +598,7 @@ function importTemplate() {
 <!-- =============================== -->
 <!-- FIM DO HTML-->
 <!-- =============================== -->
+
 
 
 
